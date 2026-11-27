@@ -43,6 +43,12 @@
         <scope>test</scope>
     </dependency>
     <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.27.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-selenide</artifactId>
         <version>${allure.version}</version>
@@ -74,7 +80,6 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.5.2</version>
             <configuration>
-                <testFailureIgnore>false</testFailureIgnore>
                 <argLine>
                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                 </argLine>
