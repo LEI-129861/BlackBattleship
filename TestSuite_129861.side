@@ -1,0 +1,291 @@
+{
+  "id": "617e6780-1552-4c33-9ef7-129861000001",
+  "version": "2.0",
+  "name": "TestSuite_129861",
+  "url": "https://papergames.io/en/battleship",
+  "tests": [
+    {
+      "id": "617e6780-1552-4c33-9ef7-129861000006",
+      "name": "UserStoryTest6",
+      "commands": [
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006001",
+          "comment": "Abre a pagina inicial do Battleship.",
+          "command": "open",
+          "target": "/en/battleship",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006002",
+          "comment": "Define a janela para uma dimensao adequada ao jogo.",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006003",
+          "comment": "Inicia uma partida contra o robo.",
+          "command": "click",
+          "target": "xpath=//button[normalize-space(.)='Play vs robot']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006004",
+          "comment": "Aguarda o formulario de nickname de convidado.",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder='Nickname']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006005",
+          "comment": "Introduz um nickname de teste para a conta convidada.",
+          "command": "type",
+          "target": "css=input[placeholder='Nickname']",
+          "targets": [],
+          "value": "US06-Test"
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006006",
+          "comment": "Confirma o nickname e entra na sala.",
+          "command": "click",
+          "target": "xpath=//button[normalize-space(.)='Continue']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006007",
+          "comment": "Aguarda a grelha propria de 10 por 10.",
+          "command": "waitForElementVisible",
+          "target": "css=table.table-board:not([id^='board_ai'])",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006008",
+          "comment": "Confirma que a grelha de ataque do adversario esta visivel.",
+          "command": "assertElementPresent",
+          "target": "css=table.table-board[id^='board_ai']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861006009",
+          "comment": "Confirma que a grelha propria esta visivel.",
+          "command": "assertElementPresent",
+          "target": "css=table.table-board:not([id^='board_ai'])",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "617e6780-1552-4c33-9ef7-129861000010",
+      "name": "UserStoryTest10",
+      "commands": [
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010001",
+          "comment": "Abre a pagina inicial do Battleship.",
+          "command": "open",
+          "target": "/en/battleship",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010002",
+          "comment": "Inicia uma partida contra o robo.",
+          "command": "click",
+          "target": "xpath=//button[normalize-space(.)='Play vs robot']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010003",
+          "comment": "Aguarda o formulario de nickname de convidado.",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder='Nickname']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010004",
+          "comment": "Introduz um nickname de teste para a conta convidada.",
+          "command": "type",
+          "target": "css=input[placeholder='Nickname']",
+          "targets": [],
+          "value": "US10-Test"
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010005",
+          "comment": "Confirma o nickname e entra na sala.",
+          "command": "click",
+          "target": "xpath=//button[normalize-space(.)='Continue']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010006",
+          "comment": "Aguarda que a grelha de ataque esteja visivel.",
+          "command": "waitForElementVisible",
+          "target": "css=table.table-board[id^='board_ai']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010007",
+          "comment": "Dispara um missil simples na primeira casa da grelha adversaria.",
+          "command": "click",
+          "target": "css=table.table-board[id^='board_ai'] td.cell-0-0",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861010008",
+          "comment": "Confirma que a casa alvejada continua presente depois do disparo.",
+          "command": "assertElementPresent",
+          "target": "css=table.table-board[id^='board_ai'] td.cell-0-0",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "617e6780-1552-4c33-9ef7-129861000031",
+      "name": "UserStoryTest31",
+      "commands": [
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031001",
+          "comment": "Abre a pagina do Battleship para aceder a navegacao principal.",
+          "command": "open",
+          "target": "/en/battleship",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031002",
+          "comment": "Abre a Loja atraves da ligacao Shop na navegacao.",
+          "command": "click",
+          "target": "css=a[href='/en/shop']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031003",
+          "comment": "Aguarda que a secao Coins esteja visivel.",
+          "command": "waitForElementVisible",
+          "target": "css=a[href='/en/shop/virtual-coins']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031004",
+          "comment": "Confirma a presenca da categoria Coins.",
+          "command": "assertElementPresent",
+          "target": "css=a[href='/en/shop/virtual-coins']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031005",
+          "comment": "Confirma a presenca da categoria Monsters.",
+          "command": "assertElementPresent",
+          "target": "css=a[href='/en/shop/avatars']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031006",
+          "comment": "Confirma a presenca da categoria Emojis.",
+          "command": "assertElementPresent",
+          "target": "css=a[href='/en/shop/emojis']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861031007",
+          "comment": "Confirma a presenca da categoria Boosters.",
+          "command": "assertElementPresent",
+          "target": "css=a[href='/en/shop/boosters']",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "617e6780-1552-4c33-9ef7-129861000038",
+      "name": "UserStoryTest38",
+      "commands": [
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861038001",
+          "comment": "Abre a pagina de regras e estrategia do Battleship.",
+          "command": "open",
+          "target": "/en/battleship",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861038002",
+          "comment": "Aguarda o titulo da secao de regras.",
+          "command": "waitForElementVisible",
+          "target": "xpath=//*[self::h2 or self::h3][contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'rules')]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861038003",
+          "comment": "Confirma que a secao Rules esta presente.",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[self::h2 or self::h3][contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'rules')]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861038004",
+          "comment": "Confirma que a secao Weapons esta presente.",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[self::h2 or self::h3][contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'weapons')]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861038005",
+          "comment": "Confirma que a secao Strategy esta presente.",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[self::h2 or self::h3][contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'strategy')]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "617e6780-1552-4c33-9ef7-129861038006",
+          "comment": "Confirma que as instrucoes mencionam o centro da grelha.",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[contains(translate(normalize-space(.), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'shooting at the center')]",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "617e6780-1552-4c33-9ef7-129861000100",
+      "name": "Default Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "617e6780-1552-4c33-9ef7-129861000006",
+        "617e6780-1552-4c33-9ef7-129861000010",
+        "617e6780-1552-4c33-9ef7-129861000031",
+        "617e6780-1552-4c33-9ef7-129861000038"
+      ]
+    }
+  ],
+  "urls": [
+    "https://papergames.io/en/battleship"
+  ],
+  "plugins": []
+}
