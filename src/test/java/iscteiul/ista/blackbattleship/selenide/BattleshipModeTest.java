@@ -2,6 +2,7 @@ package iscteiul.ista.blackbattleship.selenide;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -11,9 +12,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Dimension;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Suite Selenide das historias atribuidas: US-07, US-36, US-37 e US-41.
@@ -46,16 +49,19 @@ class BattleshipModeTest {
     @Story("US-07")
     @Description("Valida a apresentacao dos modos de jogo no ecra inicial.")
     void userStoryTest07() {
-        page(BattleshipModePage.class).shouldShowAllGameModes();
+        BattleshipModePage page = page(BattleshipModePage.class).shouldShowAllGameModes();
+        assertTrue(page.areAllGameModesVisibleWithoutScrolling());
     }
 
     @Test
     @Story("US-36")
     @Description("Valida a interface em uma dimensao de ecrã de telemovel.")
     void userStoryTest36() {
-        Configuration.browserSize = "390x844";
+        WebDriverRunner.getWebDriver().manage().window().setSize(new Dimension(390, 844));
         Selenide.open(URL);
-        page(BattleshipModePage.class).shouldShowMainInterface();
+        BattleshipModePage page = page(BattleshipModePage.class).shouldShowMainInterface();
+        assertTrue(page.hasNoHorizontalOverflow());
+        assertTrue(page.areAllGameModesVisibleWithoutScrolling());
     }
 
     @Test

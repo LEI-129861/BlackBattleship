@@ -2,6 +2,7 @@ package iscteiul.ista.blackbattleship;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -21,11 +22,12 @@ public class UserStory41 {
      * @return verdadeiro se Privacy e Terms &amp; conditions estiverem presentes
      */
     public boolean hasPrivacyAndTermsLinks() {
-        return isPresent("a[href='/en/blog/privacy-policy']")
-                && isPresent("a[href='/en/blog/terms-conditions']");
+        return isVisible("a[href='/en/blog/privacy-policy']")
+                && isVisible("a[href='/en/blog/terms-conditions']");
     }
 
-    private boolean isPresent(String css) {
-        return !driver.findElements(By.cssSelector(css)).isEmpty();
+    private boolean isVisible(String css) {
+        return driver.findElements(By.cssSelector(css)).stream()
+                .anyMatch(WebElement::isDisplayed);
     }
 }

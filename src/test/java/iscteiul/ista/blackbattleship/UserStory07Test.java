@@ -3,6 +3,7 @@ package iscteiul.ista.blackbattleship;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -34,5 +35,9 @@ class UserStory07Test {
     void userStoryTest07() {
         UserStory07 page = new UserStory07(driver);
         assertTrue(page.hasAllGameModes());
+        assertTrue(page.areAllGameModesVisibleWithoutScrolling());
+
+        driver.manage().window().setSize(new Dimension(390, 844));
+        assertTrue(page.areAllGameModesVisibleWithoutScrolling());
     }
 }

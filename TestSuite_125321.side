@@ -12,7 +12,7 @@
         {"id": "us07-friend", "comment": "Verificar o botao Jogar com amigo", "command": "assertElementPresent", "target": "xpath=//button[contains(normalize-space(.), 'Play with a friend')]", "targets": [], "value": ""},
         {"id": "us07-robot", "comment": "Verificar o botao Jogar contra o robo", "command": "assertElementPresent", "target": "xpath=//button[contains(normalize-space(.), 'Play vs robot')]", "targets": [], "value": ""},
         {"id": "us07-online", "comment": "Verificar o botao Jogar online", "command": "assertElementPresent", "target": "xpath=//button[contains(normalize-space(.), 'Play online')]", "targets": [], "value": ""},
-        {"id": "us07-tournament", "comment": "Verificar o botao Criar torneio", "command": "assertElementPresent", "target": "xpath=//a[contains(normalize-space(.), 'Create tournament')]", "targets": [], "value": ""}
+        {"id": "us07-tournament", "comment": "Verificar a ligacao Criar torneio", "command": "assertElementPresent", "target": "xpath=//main//a[contains(normalize-space(.), 'Create tournament')]", "targets": [], "value": ""}
       ]
     },
     {

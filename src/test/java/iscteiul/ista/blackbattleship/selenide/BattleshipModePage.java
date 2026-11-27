@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 /**
  * Page Object Selenide para as US-07, US-36, US-37 e US-41.
@@ -21,7 +22,7 @@ public class BattleshipModePage {
     @FindBy(xpath = "//button[contains(normalize-space(.), 'Play online')]")
     private SelenideElement playOnline;
 
-    @FindBy(xpath = "//a[contains(normalize-space(.), 'Create tournament')]")
+    @FindBy(xpath = "//main//a[contains(normalize-space(.), 'Create tournament')]")
     private SelenideElement createTournament;
 
     @FindBy(css = "a[href*='play.google.com/store/apps/details?id=io.papergames.app']")
@@ -49,6 +50,18 @@ public class BattleshipModePage {
         return this;
     }
 
+    public boolean areAllGameModesVisibleWithoutScrolling() {
+        return isWithinViewport(playWithFriend)
+                && isWithinViewport(playVsRobot)
+                && isWithinViewport(playOnline)
+                && isWithinViewport(createTournament);
+    }
+
+    public boolean hasNoHorizontalOverflow() {
+        return Boolean.TRUE.equals(executeJavaScript(
+                "return document.documentElement.scrollWidth <= window.innerWidth;"));
+    }
+
     public BattleshipModePage shouldShowMobileAppLinks() {
         googlePlayLink.shouldBe(visible);
         appStoreLink.shouldBe(visible);
@@ -59,5 +72,15 @@ public class BattleshipModePage {
         privacyLink.shouldBe(visible);
         termsLink.shouldBe(visible);
         return this;
+    }
+
+    private boolean isWithinViewport(SelenideElement element) {
+        return Boolean.TRUE.equals(executeJavaScript(
+                "const rect = arguments[0].getBoundingClientRect();"
+                        + "return rect.width > 0 && rect.height > 0"
+                        + " && rect.top >= 0 && rect.left >= 0"
+                        + " && rect.bottom <= window.innerHeight"
+                        + " && rect.right <= window.innerWidth;",
+                element));
     }
 }
