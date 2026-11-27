@@ -1,7 +1,7 @@
 {
-  "id": "129861-battleship-tests",
+  "id": "125321-battleship-tests",
   "version": "2.0",
-  "name": "TestSuite_129861",
+  "name": "TestSuite_125321",
   "url": "https://papergames.io",
   "tests": [
     {
@@ -43,7 +43,7 @@
       ]
     }
   ],
-  "suites": [{"id": "suite-129861", "name": "Default Suite", "persistSession": false, "parallel": false, "timeout": 300, "tests": ["user-story-07", "user-story-36", "user-story-37", "user-story-41"]}],
+  "suites": [{"id": "suite-125321", "name": "Default Suite", "persistSession": false, "parallel": false, "timeout": 300, "tests": ["user-story-07", "user-story-36", "user-story-37", "user-story-41"]}],
   "urls": ["https://papergames.io"],
   "plugins": []
 }

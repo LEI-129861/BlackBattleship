@@ -12,9 +12,9 @@ Curso: **LEI**
 
 ## Test suites individuais
 
-### TestSuite_129861
+### TestSuite_125321
 
-Historias implementadas pelo membro 129861:
+Historias implementadas pelo membro 125321:
 
 - **US-07** - Escolher o modo no ecra inicial.
 - **US-36** - Jogar no navegador, em computador e telemovel.
